@@ -18,8 +18,8 @@
     </div>
 
     <div
-      v-if="item?.collectionId && !$device.isMobile"
-      class="min-h-[1.5rem]"
+      v-if="item?.collectionId"
+      class="min-h-[1.5rem] max-md:hidden"
     >
       <CollectionDetailsPopover :nft="item">
         <template #content>
@@ -60,10 +60,7 @@
           class="ml-2 text-k-grey text-xs"
         >- {{ $t('spotlight.sold') }}</span>
       </div>
-      <p
-        v-if="!$device.isMobile"
-        class="text-xs text-k-grey capitalize"
-      >
+      <p class="text-xs text-k-grey capitalize max-md:hidden">
         {{ chainName }}
       </p>
     </div>

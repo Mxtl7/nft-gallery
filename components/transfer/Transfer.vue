@@ -141,10 +141,7 @@
 
       <hr>
 
-      <div
-        v-if="!isMobile"
-        class="flex"
-      >
+      <div class="flex max-md:hidden">
         <div class="font-bold text-base mb-3 flex-1 mr-2 flex-grow-2">
           {{ $t('transfers.recipient') }}
         </div>
@@ -159,8 +156,7 @@
           class="mb-3"
         >
           <div
-            v-if="isMobile"
-            class="font-bold text-base mb-3 flex items-center justify-between"
+            class="font-bold text-base mb-3 flex items-center justify-between md:hidden"
           >
             {{ $t('transfers.recipient') }} {{ index + 1 }}
             <a
@@ -237,8 +233,8 @@
                 @update:model-value="onUsdFieldChange(destinationAddress)"
               />
               <a
-                v-if="!isMobile && targetAddresses.length > 1"
-                class="flex"
+                v-if="targetAddresses.length > 1"
+                class="flex max-md:hidden"
                 data-testid="transfer-remove-recipient"
                 @click="deleteAddress(index)"
               >

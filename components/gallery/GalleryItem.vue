@@ -119,10 +119,10 @@
           <hr>
           <template v-if="!nft?.burned">
             <UnlockableTag
-              v-if="isUnlockable && isMobile"
+              v-if="isUnlockable"
               :nft="nft"
               :link="unlockLink"
-              class="mt-4"
+              class="mt-4 md:hidden"
             />
 
             <!-- price section -->
@@ -135,10 +135,10 @@
               :highest-offer="nftHighestOffer"
             />
             <UnlockableTag
-              v-if="isUnlockable && !isMobile"
+              v-if="isUnlockable"
               :link="unlockLink"
               :nft="nft"
-              class="mt-7"
+              class="mt-7 max-md:hidden"
             />
           </template>
         </div>

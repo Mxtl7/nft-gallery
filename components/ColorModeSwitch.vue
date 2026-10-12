@@ -1,15 +1,14 @@
 <template>
   <ColorScheme>
     <KIcon
-      v-if="isMobile"
-      class="cursor-pointer"
+      class="cursor-pointer md:hidden"
       :name="currentMode.icon"
       size="medium"
       @click="switchToNextMode"
     />
     <NeoDropdown
-      v-else
       v-model="preference"
+      class="max-md:hidden"
       position="top-right"
       :close-on-click="true"
       aria-role="list"
@@ -52,7 +51,6 @@ const {
   currentMode,
   switchToNextMode,
 } = useTheme()
-const { isMobile } = useViewport()
 
 const onChange = (option) => {
   setColorMode(option.value)
